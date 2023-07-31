@@ -19,7 +19,7 @@
                     </div>
                     @include('comics.index')
                     <div class="col-12 d-flex justify-content-center">
-                        <button >LOAD MORE</button>
+                        <a class="btn btn-primary" href="{{route('comics.create')}}"> Crea il tuo fumetto</a>
                     </div>
                 </div>   
             </div>
