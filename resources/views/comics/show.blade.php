@@ -56,6 +56,7 @@
         </div>  
     </div>    
     <div class="table-bg">
+        
         {{-- SEZIONE TABELLE --}}
         <div class="container pb-3">
             <div class="row">
