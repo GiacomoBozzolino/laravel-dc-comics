@@ -1,1 +1,297 @@
 @import '~bootstrap/scss/bootstrap';
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+header{
+    height: 150px;
+    // padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+        height: 130px;
+        align-items: center;
+        li{
+            display: flex;
+            margin: 0 10px;
+            height: 100%;
+            align-items: center;
+            padding-bottom: 5px;
+
+            a{
+                text-decoration: none;
+                font-weight: bold;
+                color: #303030;
+
+                &:hover{
+                    border-bottom: 5px solid #1F81FA;
+                    padding-top: 50px;
+                    color:#1F81FA;
+                    height: 100%;
+                    font-weight: bold;
+                }
+            }
+
+            input{
+                border: none;
+                text-align: right;
+                font-weight:bold ;
+                border-bottom: 1px solid #1F81FA;
+            }
+
+            hr{
+            height: 5px;
+            width: 100px;
+            }
+       
+        
+        }
+    }
+      
+ 
+}
+
+.active{
+    border-bottom: 5px solid #1F81FA;
+    padding-top: 50px;
+    color:#1F81FA;
+    height: 100%;
+    font-weight: bold;
+      
+  }
+
+
+
+
+main{
+    
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+}
+
+
+.blue{
+    background-color:#1F81FA ;
+}
+.black{
+    background-color: black;
+}
+
+.content{
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+      
+}
+
+.thumb{
+    width: 150px;
+}
+
+.blue-content{
+    // height: 200px;
+    justify-content: center;
+    padding: 30px 0;
+        ul{
+           justify-content: space-around;
+           li{
+               display: flex;
+               padding: 0 20px;
+               a{
+                    color: white;
+                
+                       img{
+                           width: 80px;
+                           margin: 0 10px; 
+                            
+                       }  
+                }
+
+           };
+        }
+
+}
+
+#jumbo{
+    height: 45vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+#series{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    background-color: #1F81FA;
+    padding: 10px 20px;
+    font-weight: bold;
+    top: -25px;
+}
+
+button{
+    padding: 7px 50px;
+    margin:none;
+    border:none;
+    background-color: #1F81FA;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+// classi footer
+
+footer{
+    background-image: url(../images/footer-bg.jpg);
+    background-size: cover;
+    color: #959595
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+.upper-footer{
+    background-size: cover;
+    display: flex;
+        div{
+            padding: 20px;
+            color: white;
+                ul{
+                    li{
+                        padding: 2px 0;
+                        a{
+                            color: #959595;
+                        }
+                    }
+                    
+                }
+        }
+}
+
+h3{
+    font-size: 17px;
+    padding: 10px 0;
+}
+
+.container.flex{
+    justify-content: space-between;
+}
+.logo{
+    background-image: url(../images/dc-logo-bg.png);
+    height:100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+}
+.lower-footer{
+    background-color: #303030;
+    height: 100px;
+        .container{
+            height: 100%;
+
+            button{
+                padding: 20px;
+                background-color: transparent;
+                border: 2px solid #1F81FA;
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
+                cursor: pointer;
+
+            }
+        }
+    
+
+}
+
+
+.lower-content{
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+     div{
+            display: flex;
+            h3{
+                color: #1F81FA;
+                margin-right: 20px;
+                font-size: 22px;
+            }
+            ul{
+                li{
+                    padding: 0 10px;
+                }
+            }
+
+        }
+}
+    .row{
+        height: 100%;
+        padding: 0 20px;
+        
+    }
+
+// CLASSI SHOW
+
+#thumb{
+    max-height: 300px;
+}
+
+.height{
+    height: 7vh;
+}
+
+.thumbnail{
+   position: absolute;
+   bottom: 1rem;
+    border: 1px white solid
+}
+
+h1{
+    text-transform: uppercase;
+    padding:1rem 0;
+    color: #003E5D;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.table-bg{
+    background-color:#F6F6F6 ;
+    border-top: 1px solid rgba(146, 145, 145, 0.315);
+}
+
+table{
+    background-color: transparent;
+    margin-bottom: 30px;
+    tr{
+        border-bottom: 1px solid rgba(146, 145, 145, 0.315);
+        
+        th{
+            padding-right:30px;
+            padding-top: 10px;
+            padding-bottom: 10px;   
+        }
+
+        td{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+.bottom-menu{
+    filter: invert(50%);
+    img{
+        height: 50px;
+    }
+}
+;
