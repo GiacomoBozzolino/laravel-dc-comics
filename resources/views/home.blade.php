@@ -17,18 +17,7 @@
                     <div class="position-relative">
                         <div id="series">CURRENT SERIES</div>
                     </div>
-                     {{-- @foreach($comics as $comic)
-                    <div class="col-2">
-                        <li class="d-flex pt-5 pb-2">
-                            <a href="{{route('comic.show', $comic->id)}}">
-                                <img class="thumb" src="{{$comic ->thumb }}" alt="{{$comic ->title }}">
-                                <div >
-                                {{$comic ->title }}
-                                </div>
-                            </a>
-                        </li> 
-                    </div>
-                    @endforeach  --}}
+                    @include('comics.index')
                     <div class="col-12 d-flex justify-content-center">
                         <button >LOAD MORE</button>
                     </div>
