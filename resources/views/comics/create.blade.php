@@ -12,8 +12,13 @@
                         <input type="text" id="title" name="title" class="form-control" placeholder="Title">
                     </div>
                     <div class="form-group">
+                        <label class="control-label" >Thumbnail</label>
+                        <input type="text" id="thumb" name="thumb" class="form-control" placeholder="thumb">
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" >Description</label>
-                        <input type="text" id="description" name="description" class="form-control" placeholder="description">
+                      
+                        <textarea name="description" id="description" cols="30" rows="5" class="form-control" placeholder="description"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="control-label" >Price</label>
