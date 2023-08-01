@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -36,16 +37,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' =>'required| max:50',
-            'thumb' =>' max:255',
-            'description' =>'required',
-            'price' =>'required| max:10',
-            'series' =>'required| max:50',
-        ]);
+
+        $form_data = $this->validation($request->all());
+        // $request->validate([
+        //     'title' =>'required| max:50',
+        //     'thumb' =>' max:255',
+        //     'description' =>'required',
+        //     'price' =>'required| max:10',
+        //     'series' =>'required| max:50',
+        // ]);
 
 
-        $form_data =$request->all();
+        // $form_data =$request->all();
 
         $comic = new Comic();
         // $comic->title=$form_data['title'];
@@ -91,15 +94,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $request->validate([
-            'title' =>'required| max:50',
-            'thumb' =>' max:255',
-            'description' =>'required',
-            'price' =>'required| max:10',
-            'series' =>'required| max:50',
-        ]);
-        
-        $form_data =$request->all();
+
+        $form_data = $this->validation($request->all());
+        // $request->validate([
+        //     'title' =>'required| max:50',
+        //     'thumb' =>' max:255',
+        //     'description' =>'required',
+        //     'price' =>'required| max:10',
+        //     'series' =>'required| max:50',
+        // ]);
+
+        // $form_data =$request->all();
 
         $comic ->update($form_data);
         return redirect()-> route('comics.show', ['comic' => $comic->id]);
@@ -116,4 +121,46 @@ class ComicController extends Controller
         $comic ->delete();
         return redirect()->route('comics.index');
     }
+
+    // funzione personalizzazione messaggi di validazione
+
+    private function validation($data){
+        $valdiator = Validator::make($data,
+
+        [
+            'title' =>'required| max:50',
+            'thumb' =>' max:255',
+            'description' =>'required',
+            'price' =>'required| max:10',
+            'series' =>'required| max:50',
+        ],
+
+        [
+            'title.required'=> 'Il tuo fumeto deve avere un titolo!',
+            'title.max'=> 'Questo titolo è troppo lungo! Meglio non superare i :max caratteri.',
+            'thumb.max' => 'Questo link è troppo lungo!Meglio non superare i :max caratteri.',
+            'description'=> 'Ricordati di dirci di cosa parla il tuo fumetto! Bastano poche parole.',
+            'price.required' => 'Il tuo fumetto deve avere un prezzo.',
+            'price.max' => 'Il tuo fumetto deve avere un prezzo, ma cerchiamo di non esagerare! Non più di :max caratteri.',
+            'series.required' => 'Ricodati di dirci a che serie appartiene il tuo fumetto!',
+            'series.max'=> 'Le serie con nomi più corti sono più facili da ricordare! Non superare i :max caratteri.'
+        ]
+
+        )->validate();
+        return $valdiator;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
