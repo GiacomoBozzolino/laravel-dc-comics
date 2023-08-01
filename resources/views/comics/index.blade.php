@@ -20,9 +20,9 @@
                 <form action="{{route('comics.destroy', $comic->id)}}" method="post" >
                     @csrf
                     @method ('DELETE')
-                    <a  class="btn btn-danger btn-sm" href="{{route('comics.edit', $comic->id)}}">
+                    <button  class="btn btn-danger btn-sm" type="submit">
                         <i class="fas fa-trash"></i>
-                    </a> 
+                    </button> 
     
                 </form>
             </div>
