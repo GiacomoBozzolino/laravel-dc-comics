@@ -36,6 +36,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' =>'required| max:50',
+            'thumb' =>' max:255',
+            'description' =>'required',
+            'price' =>'required| max:10',
+            'Series' =>'required| max:50',
+        ]);
+
+
         $form_data =$request->all();
 
         $comic = new Comic();
