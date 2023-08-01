@@ -17,13 +17,12 @@
                     <i class="fas fa-edit"></i>
                 </a> 
                 {{-- bottone per cancellazione (dentro form) --}}
-                <form action="{{route('comics.destroy', $comic->id)}}" method="post" >
+                <form action="{{route('comics.destroy', $comic->id)}}" onsubmit="return confirm('Vuoi davvero cancellare il fumetto?')" method="post" >
                     @csrf
                     @method ('DELETE')
                     <button  class="btn btn-danger btn-sm" type="submit">
                         <i class="fas fa-trash"></i>
                     </button> 
-    
                 </form>
             </div>
         </li> 
